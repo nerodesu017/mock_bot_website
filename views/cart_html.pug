@@ -1,0 +1,23 @@
+doctype html
+html 
+  include includes/head.pug
+  body
+    
+    include includes/header.pug
+    div(class="container")
+      div(class="row justify-content-center")
+        div(class="col-6")
+          h4(class="d-flex align-items-center")
+            span(class="cart_title") Cart (1)
+          ul(class="list-group mb-3")
+            each size_object, product_name in products
+              each count, size in size_object
+                li(class="list-group-item d-flex justify-content-between 1h-sm")
+                  div
+                    h6(class="prod_name")= product_name
+                    small= 'Size: ' + size
+                    
+                  span
+                    h6 $199.99
+                    small(class="text-muted")= 'Qty: ' + count
+                  //- span(class="text-muted")= 'Qty: ' + count

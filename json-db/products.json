@@ -1,0 +1,10 @@
+{
+  "products": {
+    "prods_based_on_id" : {
+      "69420": "Air Jordan 1 High Mocha"
+    }, 
+    "prods_based_on_name" : {
+      "Air Jordan 1 High Mocha": "69420"
+    }
+  }
+}

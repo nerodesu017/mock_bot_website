@@ -1,0 +1,6 @@
+{
+    "express": {
+        "port": "3000",
+        "secret": "AwKIv3z6KHavhxmvxwE6bIyWvaMmq2tU2xRuPqPI4evrb1lr8e1Keb57azHPhRMd"
+    }
+}

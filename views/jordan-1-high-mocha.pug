@@ -1,0 +1,28 @@
+doctype html
+html
+  include includes/head.pug
+  link(rel="stylesheet", href="/public/stylesheets/product.css", type="text/css")
+  body
+    include includes/header.pug
+    main(class="container")
+      div(class="product row justify-content-center")
+        div(class="col align-self-center")
+          img(src="/public/img/jordan1.jpg", class="d-block")
+        div(class="details col-sm-7 align-self-center")
+          h5(class="description d-block") The Air Jordan 1 High OG “Dark Mocha” is f*cking awesome. It resembles Travis Scott's Air Jordan 1 from 2019. Dressed in a Sail, Dark Mocha, and Black color scheme. This Air Jordan 1 features a Sail leather base with Black leather overlays and Swooshes.
+          form(action="/addtocart", method="get", class="g-3")
+            div(class="product-details d-block")
+              input(type="hidden", id="product_id", name="id", value="69420")
+              div(class="price")
+                h1(class="price") $199.99
+              div(class="form-floating")
+                div(class="row justify-content-center")
+                  div(class="col-4 align-self-center")
+                    label(for="size_select") Size(US)
+                    select(class="form-select", id="size_select", aria-label="Size", name="size")
+                      option(selected, value="8") 8
+                      option(value="8.5") 8.5
+                      option(value="9") 9
+                      option(value="9.5") 9.5
+                      option(value="10") 10
+              button(type="submit", class="btn btn-success btn-lg", id="atc_button") Add to Cart

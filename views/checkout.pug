@@ -1,0 +1,73 @@
+doctype html
+html 
+  include includes/head.pug
+  body
+    
+    include includes/header.pug
+    div(class="container")
+      div(class="row g-3")
+        div(class="col-md-5 col-lg-4 order-md-last cart")
+          h4(class="d-lex justify-content-between align-items-center mb-3")
+            span Cart
+            span(class="badge rounded-pill bg-secondary")
+          ul(class="list-group mb-3" id="cart")
+            each size_object, product_name in products
+                each count, size in size_object
+                  li(class="list-group-item d-flex justify-content-between 1h-sm")
+                    div
+                      h6(class="prod_name")= product_name
+                      small= 'Size: ' + size
+                    span
+                      h6 $199.99
+                      small(class="text-muted")= 'Qty: ' + count
+            //- li(class="list-group-item d-flex justify-content-between 1h-sm")
+            //-   div
+            //-     h6 Air Jordan 1 High Mocha
+            //-   span $199.99
+        div(class="col-md-7 col-xl-6")
+          h4(class="mb-3") Billing
+          form(method="post" action="/checkout")
+            div(class="row g-3")
+              div(class="col-sm-6")
+                label(for="firstName" class="form-label") First name
+                input(type="text" class="form-control" id="firstName" name="firstName")
+              div(class="col-sm-6")
+                label(for="lastName" class="form-label") Last name
+                input(type="text" class="form-control" id="lastName" name="lastName")
+              div(class="col-12")
+                label(for="email" class="form-label") Email
+                input(type="text" class="form-control" id="email" name="email")
+              div(class="col-12")
+                label(for="address" class="form-label") Address
+                input(type="text" class="form-control" id="address" name="address")
+              div(class="col-md-5")
+                label(for="country" class="form-label") Country
+                select(class="form-select" id="country" name="country")
+                  option(selected value="US") United States
+              div(class="col-md-4")
+                label(for="state" class="form-label") State/City
+                select(class="form-select" id="state" name="state")
+                  option(selected value="FL") FL
+              div(class="col-md-3")
+                label(for="zip" class="form-label") Zip
+                input(type="text" class="form-control" id="zip" name="zip")
+              hr(class="my-4")
+              h4(class="mb-3") Payment
+              div(class="row gy-3")
+                div(class="col-md-6")
+                  label(for="cc-name" class="form-label") Name on CC
+                  input(type="text" class="form-control" id="cc-name" name="cc-name")
+                div(class="col-md-6")
+                  label(for="cc-no" class="form-label") CC No.
+                  input(type="text" class="form-control" id="cc-no" name="cc-no" maxlength="19")
+              div(class="row gy-3")
+                div(class="col-md-3")
+                  label(for="cc-exp" class="form-label") Exp
+                  input(type="text" class="form-control" id="cc-exp" name="cc-exp" maxlength="5")
+                div(class="col-md-3")
+                  label(for="CVV" class="form-label") CVV
+                  input(type="text" class="form-control" id="CVV" name="CVV" maxlength="4")
+              hr(class="my-4")
+              button(class="w-100 btn btn-primary btn-lg" type="submit") Submit order
+    script(src="/public/js/checkout.js")
+

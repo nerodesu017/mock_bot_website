@@ -1,0 +1,14 @@
+doctype html
+html 
+  include includes/head.pug
+  link(rel='stylesheet', href='/public/stylesheets/index.css', type='text/css')
+  body
+    include includes/header.pug
+    main(class="container text-center")
+        div(class="card product position-absolute top-50 start-50 translate-middle")
+          a(href="/products/jordan-1-high-mocha")
+            div(class="d-block")
+              img(src="/public/img/jordan1.jpg", class="rounded card-img-top")
+          div(class="card-body")
+            h5(class="card-title") Jordan 1 Dark Mocha
+            a(href="/products/jordan-1-high-mocha" class="btn btn-success") Buy

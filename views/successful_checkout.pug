@@ -1,0 +1,12 @@
+doctype html 
+html 
+  include includes/head
+  body
+    include includes/header
+    div(class="container")
+      div(class="row justify-content-center")
+          div(class="col-12")
+            if failed
+              h1(class="alert alert-danger" role="alert") Failed placing your order
+            else 
+              h1(class="alert alert-success" role="alert") Order placed successfully
